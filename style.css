@@ -251,11 +251,12 @@ section h2 {
 
 .project-image {
   height: 200px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     var(--primary-color),
     var(--accent-color)
-  );
+  ); */
+  background: var(--bg) center/cover no-repeat;
 }
 
 .project-card h3 {
