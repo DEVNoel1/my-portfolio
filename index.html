@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">DEVNOEL1</div>
+        <ul class="nav-menu">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Bonjour, <br />moi c'est JEAN-NOEL et je suis Développeur</h1>
+        <p>Je crée des expériences web modernes et performantes</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="cta-button">Démarrons un projet</a>
+          <a href="mon cv/CV Pro.pdf" target="_blank" class="download-button"
+            >Télécharger mon CV</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- À Propos -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>À propos de moi</h2>
+        <div class="about-content">
+          <p>
+            Je suis un développeur junior passionné par la création de solutions
+            web. Avec une solide base en HTML, CSS et JavaScript, je suis
+            capable de transformer des idées en réalité numérique.
+          </p>
+          <p>
+            J'aime apprendre de nouvelles technologies et résoudre des problèmes
+            complexes. Mon objectif est de créer des interfaces intuitives et du
+            code de qualité.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2>Mes compétences</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <p>HTML5, CSS3, JavaScript</p>
+          </div>
+          <div class="skill-card">
+            <h3>Design</h3>
+            <p>UI/UX, Responsive Design</p>
+          </div>
+          <div class="skill-card">
+            <h3>Outils</h3>
+            <p>Git, VS Code, Chrome DevTools, ChatGPT, claude</p>
+          </div>
+          <div class="skill-card">
+            <h3>Soft Skills</h3>
+            <p>Communication, Autonomie, Créativité</p>
+          </div>
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <p>PHP, MySQL</p>
+          </div>
+          <div class="skill-card">
+            <h3>Bureautique</h3>
+            <p>Microsoft Office, Google Workspace</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>Mes projets</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image"></div>
+            <h3>Projet 1</h3>
+            <p>
+              Description du projet 1. Une brève explication de ce que vous avez
+              créé et les technologies utilisées.
+            </p>
+            <a href="#" class="project-link">Voir plus →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-image"></div>
+            <h3>Projet 2</h3>
+            <p>
+              Description du projet 2. Expliquez votre approche et les défis
+              surmontés.
+            </p>
+            <a href="#" class="project-link">Voir plus →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-image"></div>
+            <h3>Projet 3</h3>
+            <p>
+              Description du projet 3. Montrez comment vous avez résolu un
+              problème spécifique.
+            </p>
+            <a href="#" class="project-link">Voir plus →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Me contacter</h2>
+        <p>Vous avez un projet en tête? Parlons-en!</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Votre nom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="votre.email@example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet *</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              placeholder="Sujet du message"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Votre message..."
+              rows="6"
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        <div class="social-links">
+          <a
+            href="mailto:dagojeannoel25@gmail.com"
+            target="_blank"
+            class="social-icon"
+            title="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jean-no%C3%ABl-dago-02b07b305/"
+            class="social-icon"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/DEVNoel1"
+            target="_blank"
+            class="social-icon"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          backToTopBtn.classList.add("show");
+        } else {
+          backToTopBtn.classList.remove("show");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
