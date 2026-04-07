@@ -13,9 +13,12 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="nav-container">
+      <div class="nav-container container">
         <div class="logo">DEVNOEL1</div>
-        <ul class="nav-menu">
+        <button id="navToggle" class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul id="navMenu" class="nav-menu">
           <li><a href="#about">À propos</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projets</a></li>
@@ -44,9 +47,14 @@
         <h2>À propos de moi</h2>
         <div class="about-content">
           <p>
-            Je suis un développeur junior passionné par la création de solutions
-            web. Avec une solide base en HTML, CSS et JavaScript, je suis
-            capable de transformer des idées en réalité numérique.
+            Je me nomme
+            <span style="color: var(--primary-color)"
+              >Dago Wassa Jean-Noel</span
+            >
+            et je suis un développeur junior passionné par la création de
+            solutions web. Avec une solide base en frontend et une compréhension
+            des technologies backend, je suis prêt à relever les défis du
+            développement web et à transformer des idées en réalité numérique.
           </p>
           <p>
             J'aime apprendre de nouvelles technologies et résoudre des problèmes
@@ -95,27 +103,36 @@
       <div class="container">
         <h2>Mes projets</h2>
         <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image style="--bg: url(images/project1.webp)"></div>
+          <!-- <div class="project-card">
+            <div
+              class="project-image"
+              style="--bg: url(images/project1.webp)"
+            ></div>
             <h3>Projet 1</h3>
             <p>
               Description du projet 1. Une brève explication de ce que vous avez
               créé et les technologies utilisées.
             </p>
             <a href="#" class="project-link">Voir plus →</a>
-          </div>
+          </div> -->
           <div class="project-card">
-            <div
-              class="project-image"
-              style="--bg: url(images/project2.webp)"
-            ></div>
-            <h3>Projet 2</h3>
+            <div class="project-image" style="--bg: url(images/pr1.webp)"></div>
+            <h3>Projet</h3>
             <p>
-             Création d'un site web d'assitance informatique en ligne pour aider les utilisateurs à résoudre leurs problèmes informatiques à distance. Le site propose des services de dépannage, de maintenance et de conseils personnalisés pour garantir une expérience utilisateur optimale.
+              Création d'un site web d'assitance informatique en ligne pour
+              aider les utilisateurs à résoudre leurs problèmes informatiques à
+              distance. Le site propose des services de dépannage, de
+              maintenance et de conseils personnalisés pour garantir une
+              expérience utilisateur optimale.
             </p>
-            <a href="https://devnoel1.github.io/DEVNOEL_services/" class="project-link" target="_blank">Voir plus →</a>
+            <a
+              href="https://devnoel1.github.io/DEVNOEL_services/"
+              class="project-link"
+              target="_blank"
+              >Voir plus →</a
+            >
           </div>
-          <div class="project-card">
+          <!-- <div class="project-card">
             <div
               class="project-image"
               style="--bg: url(images/project3.webp)"
@@ -126,7 +143,7 @@
               problème spécifique.
             </p>
             <a href="#" class="project-link">Voir plus →</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -136,8 +153,13 @@
       <div class="container">
         <h2>Me contacter</h2>
         <p>Vous avez un projet en tête? Parlons-en!</p>
-        <form name="contact" method="post" data-netlify="true" class="contact-form">
-          <input type="hidden" name="form-name" value="contact">
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          class="contact-form"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <div class="form-group">
             <label for="name">Nom *</label>
             <input
@@ -198,6 +220,7 @@
           </a>
           <a
             href="https://www.linkedin.com/in/jean-no%C3%ABl-dago-02b07b305/"
+            target="_blank"
             class="social-icon"
             title="LinkedIn"
           >
@@ -219,18 +242,52 @@
     <button id="backToTop" class="back-to-top">↑</button>
 
     <script>
-      const backToTopBtn = document.getElementById("backToTop");
+      document.addEventListener("DOMContentLoaded", () => {
+        const backToTopBtn = document.getElementById("backToTop");
+        const navToggle = document.getElementById("navToggle");
+        const navMenu = document.getElementById("navMenu");
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 500) {
-          backToTopBtn.classList.add("show");
-        } else {
-          backToTopBtn.classList.remove("show");
-        }
-      });
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 500) {
+            backToTopBtn.classList.add("show");
+          } else {
+            backToTopBtn.classList.remove("show");
+          }
+        });
 
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        navToggle.addEventListener("click", () => {
+          if (navMenu.classList.contains("open")) {
+            // Fermer le menu
+            navMenu.classList.add("closing");
+            navMenu.classList.remove("open");
+            navToggle.classList.remove("rotated");
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            setTimeout(() => {
+              navMenu.classList.remove("closing");
+            }, 600);
+          } else {
+            // Ouvrir le menu
+            navMenu.classList.add("open");
+            navToggle.classList.add("rotated");
+            navToggle.innerHTML = '<i class="fas fa-times"></i>';
+          }
+        });
+
+        document.querySelectorAll("#navMenu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navMenu.classList.add("closing");
+            navMenu.classList.remove("open");
+            navToggle.classList.remove("rotated");
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            setTimeout(() => {
+              navMenu.classList.remove("closing");
+            }, 400);
+          });
+        });
       });
     </script>
   </body>
